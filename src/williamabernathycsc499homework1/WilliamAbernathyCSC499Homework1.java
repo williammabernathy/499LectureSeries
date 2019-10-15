@@ -140,7 +140,7 @@ public class WilliamAbernathyCSC499Homework1
         }
         
         System.out.println("The sorted contents of Sort Me.txt have been placed"
-                + " in a newly created file, Sorted Names.txt in the current "
+                + " in a newly created file. \nSorted Names.txt in the current "
                 + ".jar directory.");
         System.out.println("Exiting..");
         wr.close();
