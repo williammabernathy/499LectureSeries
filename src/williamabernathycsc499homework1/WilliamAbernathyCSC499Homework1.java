@@ -29,21 +29,21 @@ public class WilliamAbernathyCSC499Homework1
         // check if user wants to print current file contents
         System.out.println("Would you like to view the original file contents? [yes/no]");
         userInput = input.next();
-        userInput.toLowerCase();
+        userInput.toLowerCase(); // format input to check a single format
         
         // check that input is correct
         while (userInput.equals("yes") && userInput.equals("y") && userInput.equals("no") && userInput.equals("n") ) 
         {
             System.out.println("Please type yes/no [y/n].");
             userInput = input.next();
-            userInput.toLowerCase();
+            userInput.toLowerCase(); // format input to check a single format
         }
         
         // if the user entered yes, print the file contents
         if (userInput.equals("y") || userInput.equals("yes"))
         {
-            // print the contents of the original file. .read() will return
-            // -1 if no char or string is found, signaling the end of the file
+            // print the contents of the original file. .readLine() will return
+            // -1 if no char, string or line is found, signaling the end of the file
             br = new BufferedReader(new FileReader(file));
             while ((line = br.readLine()) != null) 
             {
@@ -62,6 +62,7 @@ public class WilliamAbernathyCSC499Homework1
         /* build array of file contents */
         
         // first get the number of contents
+        // be sure to remove any fluff such as blank lines or spaces
         br = new BufferedReader(new FileReader(file));
         while ((line = br.readLine()) != null) 
         {
@@ -74,7 +75,7 @@ public class WilliamAbernathyCSC499Homework1
                 } 
                 else 
                 {
-                    fileSize++;
+                    fileSize++; // increment our counter to determine our file size to write to
                 }
             }
             catch (Exception e)
@@ -84,7 +85,14 @@ public class WilliamAbernathyCSC499Homework1
         }
         br.close();
         
-        // then init and fill the array
+        /*
+        
+        ****************THIS IS A MISTAKE*******************
+        
+        */
+        
+        // then init and fill the array that we will use to write from
+        // ensure lines or trimmed and formatted correctly
         int pos = 0;
         fileContents = new String[fileSize];
         br = new BufferedReader(new FileReader(file));
@@ -99,8 +107,8 @@ public class WilliamAbernathyCSC499Homework1
                 } 
                 else 
                 {
-                    fileContents[pos] = line.trim();
-                    pos++;
+                    fileContents[pos] = line.trim(); // format the line
+                    pos++; // increment array pointer
                 }
             }
             catch (Exception e)
@@ -127,7 +135,9 @@ public class WilliamAbernathyCSC499Homework1
             {
                 // write contents to our created file
                 wr.write(fileContents[i]);
+                
                 // if it's the last line, don't add a new line
+                // this is to avoid an empty final line
                 if(i < fileContents.length - 1)
                 {
                     wr.newLine();
