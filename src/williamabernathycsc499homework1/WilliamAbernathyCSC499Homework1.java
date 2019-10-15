@@ -24,6 +24,7 @@ public class WilliamAbernathyCSC499Homework1
         int fileSize = 0;                // how many entries in file
         BufferedReader br;               // file reader for Sort Me.txt
         String line;
+        String file = "Sort Me.txt";
         
         // check if user wants to print current file contents
         System.out.println("Would you like to view the original file contents? [yes/no]");
@@ -43,7 +44,7 @@ public class WilliamAbernathyCSC499Homework1
         {
             // print the contents of the original file. .read() will return
             // -1 if no char or string is found, signaling the end of the file
-            br = new BufferedReader(new FileReader("Sort Me.txt"));
+            br = new BufferedReader(new FileReader(file));
             while ((line = br.readLine()) != null) 
             {
                 try 
@@ -61,7 +62,7 @@ public class WilliamAbernathyCSC499Homework1
         /* build array of file contents */
         
         // first get the number of contents
-        br = new BufferedReader(new FileReader("Sort Me.txt"));
+        br = new BufferedReader(new FileReader(file));
         while ((line = br.readLine()) != null) 
         {
             try
@@ -86,7 +87,7 @@ public class WilliamAbernathyCSC499Homework1
         // then init and fill the array
         int pos = 0;
         fileContents = new String[fileSize];
-        br = new BufferedReader(new FileReader("Sort Me.txt"));
+        br = new BufferedReader(new FileReader(file));
         while ((line = br.readLine()) != null) 
         {
             try
