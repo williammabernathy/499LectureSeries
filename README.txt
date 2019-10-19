@@ -7,7 +7,7 @@ To run:
 
 1. Place the contents of "Command Line Sorting Program" or the folder itself onto your desktop or in a memoriable place that has no restricted actions.
 2. Open a command prompt or equivalent
-3. Navagiate to the directory in which you've placed "WilliamAbernathyCSC499Homework1.jar" and "Sort Me.txt"
+3. Navigate to the directory in which you've placed "WilliamAbernathyCSC499Homework1.jar" and "Sort Me.txt"
 4. Enter: java -jar "WilliamAbernathyCSC499Homework1.jar" to run the .jar file
 5. Follow the prompt.
 
@@ -18,3 +18,13 @@ Ensure java is up to date.
 Ensure the folder has editing permissions
 Ensure you are in the correct directory when running the .jar
 	- For example C:\Users\matth\Desktop\Command Line Sorting Program
+
+To test:
+
+!NOTE: Sorted Names.txt must be present, meaning the application must have ran at least once in order to build the Sorted Names file
+
+1. Open the Project source code with Netbeans or similar IDE
+2. Navigate to the "test" file
+3. Right click on CompareTest.java
+4. Click "Test File"
+5. Examine the results; either success or fail.
