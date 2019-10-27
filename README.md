@@ -1,4 +1,9 @@
-Included is the source code, files worked with, and the organized filed needed. 
+# Java Sorting App
+
+This project was an assignment given to as during our CSC 499 Career Preperation class.
+It's purpose is to practice the basics of what we may deal with in a work environment
+
+Included is the source code, files worked with, and the organized files needed. 
 The only needed file to run the program is the file:
  	- "Command Line Sorting Program"
 All necessary files are located here
@@ -12,7 +17,6 @@ All necessary files are located here
 ```java
 java -jar "WilliamAbernathyCSC499Homework1.jar"
 ```
-   to run the .jar file
 5. Follow the prompt.
 
 
