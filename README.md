@@ -31,8 +31,8 @@ Ensure you are in the correct directory when running the .jar
 ## To test
 
 !NOTE: Sorted Names.txt must be present, meaning the application must have ran at least once in order to build the Sorted Names file
-!NOTE: If testing for ascending order, must run the file at least once and sort by ascending for test to run correctly, and vice versa
-       if testing for descending order.
+
+!NOTE: If testing for ascending order, must run the file at least once and sort by ascending for test to run correctly, and vice versa if testing for descending order.
 
 1. Open the Project source code with Netbeans or similar IDE
 2. Navigate to the "test" file
