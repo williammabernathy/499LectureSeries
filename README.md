@@ -23,10 +23,14 @@ java -jar "WilliamAbernathyCSC499Homework1.jar"
 ## Troubleshooting
 
 Ensure that the file "Sort Me.txt" is placed in the same directory as "WilliamAbernathyCSC499Homework1.jar".
+
 Ensure java is up to date.
+
 Ensure the folder has editing permissions
+
 Ensure you are in the correct directory when running the .jar
-	- For example C:\Users\matth\Desktop\Command Line Sorting Program
+	
+- For example C:\Users\matth\Desktop\Command Line Sorting Program
 
 ## To test
 
