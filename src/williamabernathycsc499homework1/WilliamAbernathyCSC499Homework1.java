@@ -10,35 +10,39 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
 public class WilliamAbernathyCSC499Homework1 
 {
-
-    public static void main(String[] args) throws Exception
+    private static Scanner input = new Scanner(System.in);
+    private static String userInput;
+    private static String sortChoice;
+    private static String fileContents[];           // array of file contents
+    private static int fileSize = 0;                // how many entries in file
+    private static BufferedReader br;               // file reader for Sort Me.txt
+    private static String line;
+    private static String file = "Sort Me.txt";
+    
+    private static void getInput()
     {
-        Scanner input = new Scanner(System.in);
-        String userInput;
-        String fileContents[];           // array of file contents
-        int fileSize = 0;                // how many entries in file
-        BufferedReader br;               // file reader for Sort Me.txt
-        String line;
-        String file = "Sort Me.txt";
-        
         // check if user wants to print current file contents
         System.out.println("Would you like to view the original file contents? [yes/no]");
         userInput = input.next();
         userInput.toLowerCase();
         
         // check that input is correct
-        while (userInput.equals("yes") && userInput.equals("y") && userInput.equals("no") && userInput.equals("n") ) 
+        while (!userInput.equals("yes") && !userInput.equals("y") && !userInput.equals("no") && !userInput.equals("n") ) 
         {
             System.out.println("Please type yes/no [y/n].");
             userInput = input.next();
             userInput.toLowerCase();
         }
-        
+    }
+    
+    private static void listCurrentContents() throws Exception
+    {
         // if the user entered yes, print the file contents
         if (userInput.equals("y") || userInput.equals("yes"))
         {
@@ -58,9 +62,10 @@ public class WilliamAbernathyCSC499Homework1
             }
             br.close();
         }
-        
-        /* build array of file contents */
-        
+    }
+    
+    private static void buildContentArray() throws Exception
+    {
         // first get the number of contents
         br = new BufferedReader(new FileReader(file));
         while ((line = br.readLine()) != null) 
@@ -109,15 +114,50 @@ public class WilliamAbernathyCSC499Homework1
             }
         }
         br.close();
+    }
+    
+    private static void sortArrayOfContents()
+    {
+        System.out.println("How would you like to sort the file?");
+        System.out.println("Ascending? [a]");
+        System.out.println("Descending? [d]");
+        sortChoice = input.next();
+        sortChoice.toLowerCase();
         
-        /* sort the array */
+        // check that input is correct
+        while (!sortChoice.equals("d") && !sortChoice.equals("a")) 
+        {
+            System.out.println("Please type a or d for ascending or descending, respectfully.");
+            sortChoice = input.next();
+            sortChoice.toLowerCase();
+        }
         
         // default .sort() sorts strings alphabetically
-        Arrays.sort(fileContents);
-        Arrays.sort(fileContents, Comparator.comparingInt(String::length));
-        
-        /* writing to a new file */
-        
+        if(sortChoice.equals("d"))
+        {
+            //this sorts them reverse alphabetically
+            Arrays.sort(fileContents, Collections.reverseOrder());
+            //this sort them alphabetically, as seen in the ascending case
+            //commenting this out because not sure if we are supposed to sort alphabetically, then my reverse
+            //length, or reverse alphabetically and reverse length
+            //Arrays.sort(fileContents);
+            
+            //sort by comparing two strings, and sorting them by 
+            //length of second > length of first
+            Arrays.sort(fileContents, (a, b) -> Integer.compare(b.length(), a.length()));
+        }
+        else
+        {
+            //sort alphabetically
+            Arrays.sort(fileContents);
+            
+            //sort by length. using the string's length to compare first and second
+            Arrays.sort(fileContents, (a, b) -> Integer.compare(a.length(), b.length()));
+        }
+    }
+    
+    private static void writeToNewFile() throws Exception
+    {
         // use a bufferedwriter to writer the contents of fileContents
         // to a new file called Sorted Names.txt
         BufferedWriter wr = new BufferedWriter(new FileWriter("Sorted Names.txt"));
@@ -140,10 +180,27 @@ public class WilliamAbernathyCSC499Homework1
         }
         
         System.out.println("The sorted contents of Sort Me.txt have been placed"
-                + " in a newly created file. \nSorted Names.txt in the current "
-                + ".jar directory.");
+                + " in a newly created file.");
         System.out.println("Exiting..");
         wr.close();
+    }
+
+    public static void main(String[] args) throws Exception
+    {
+        /* get user input */
+        getInput();
+        
+        /* list the current, unsort contents of file */
+        listCurrentContents();
+        
+        /* build array of file contents */
+        buildContentArray();
+        
+        /* sort the array */
+        sortArrayOfContents();
+        
+        /* writing to a new file */
+        writeToNewFile();
     }
     
 }

@@ -22,9 +22,11 @@ Ensure you are in the correct directory when running the .jar
 To test:
 
 !NOTE: Sorted Names.txt must be present, meaning the application must have ran at least once in order to build the Sorted Names file
+!NOTE: If testing for ascending order, must run the file at least once and sort by ascending for test to run correctly, and vice versa
+       if testing for descending order.
 
 1. Open the Project source code with Netbeans or similar IDE
 2. Navigate to the "test" file
-3. Right click on CompareTest.java
-4. Click "Test File"
+3. Right click on CompareTestAscending.java or CompareTestDescending.java
+4. Click "Run File"
 5. Examine the results; either success or fail.
