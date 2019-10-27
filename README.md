@@ -3,7 +3,7 @@ The only needed file to run the program is the file:
  	- "Command Line Sorting Program"
 All necessary files are located here
 
-##To run
+## To run
 
 1. Place the contents of "Command Line Sorting Program" or the folder itself onto your desktop or in a memoriable place that has no restricted actions.
 2. Open a command prompt or equivalent
@@ -16,7 +16,7 @@ java -jar "WilliamAbernathyCSC499Homework1.jar"
 5. Follow the prompt.
 
 
-##Troubleshooting
+## Troubleshooting
 
 Ensure that the file "Sort Me.txt" is placed in the same directory as "WilliamAbernathyCSC499Homework1.jar".
 Ensure java is up to date.
@@ -24,7 +24,7 @@ Ensure the folder has editing permissions
 Ensure you are in the correct directory when running the .jar
 	- For example C:\Users\matth\Desktop\Command Line Sorting Program
 
-##To test
+## To test
 
 !NOTE: Sorted Names.txt must be present, meaning the application must have ran at least once in order to build the Sorted Names file
 !NOTE: If testing for ascending order, must run the file at least once and sort by ascending for test to run correctly, and vice versa
