@@ -138,11 +138,11 @@ public class WilliamAbernathyCSC499Homework1
             //this sorts them alphabetically
             Arrays.sort(fileContents);
             
-            //97-122
+            
             int nameFirstCharToASCII;
             int currentChar = 97;
             int currentArrayPos = 0;
-            int startPos = currentArrayPos;
+            int startPos = 0;
             int endPos = 0;
             
             nameFirstCharToASCII = (int) fileContents[currentArrayPos].toLowerCase().charAt(0);
@@ -155,10 +155,10 @@ public class WilliamAbernathyCSC499Homework1
                 if (nameFirstCharToASCII != currentChar) 
                 {
                     startPos = currentArrayPos;
-                    currentChar++;
+                    currentChar = nameFirstCharToASCII;
                 }
 
-                Arrays.sort(fileContents, startPos, endPos, (a, b) -> Integer.compare(b.length(), a.length()));
+                Arrays.sort(fileContents, startPos, endPos, Comparator.comparingInt(String::length).reversed());
             }
         }
         // ascending
