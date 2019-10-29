@@ -127,31 +127,49 @@ public class WilliamAbernathyCSC499Homework1
         // check that input is correct
         while (!sortChoice.equals("d") && !sortChoice.equals("a")) 
         {
-            System.out.println("Please type a or d for ascending or descending, respectfully.");
+            System.out.println("Please type [a or d] for [ascending or descending], respectfully.");
             sortChoice = input.next();
             sortChoice.toLowerCase();
         }
         
-        // default .sort() sorts strings alphabetically
+        // descending
         if(sortChoice.equals("d"))
         {
             //this sorts them reverse alphabetically
-            Arrays.sort(fileContents, Collections.reverseOrder());
-            //this sort them alphabetically, as seen in the ascending case
-            //commenting this out because not sure if we are supposed to sort alphabetically, then my reverse
-            //length, or reverse alphabetically and reverse length
-            //Arrays.sort(fileContents);
+            Arrays.sort(fileContents);
             
             //sort by comparing two strings, and sorting them by 
             //length of second > length of first
-            Arrays.sort(fileContents, (a, b) -> Integer.compare(b.length(), a.length()));
+            //97-122
+            int nameFirstCharToASCII;
+            int currentChar = 97;
+            int currentArrayPos = 0;
+            int startPos = currentArrayPos;
+            int endPos = 0;
+            
+            nameFirstCharToASCII = (int) fileContents[currentArrayPos].toLowerCase().charAt(0);
+
+            for (currentArrayPos = 0; currentArrayPos < fileContents.length; currentArrayPos++) 
+            {
+                nameFirstCharToASCII = (int) fileContents[currentArrayPos].toLowerCase().charAt(0);
+                endPos++;
+                
+                if (nameFirstCharToASCII != currentChar) 
+                {
+                    startPos = currentArrayPos;
+                    currentChar++;
+                }
+
+                Arrays.sort(fileContents, startPos, endPos, (a, b) -> Integer.compare(b.length(), a.length()));
+            }
         }
+        // ascending
         else
         {
-            //sort alphabetically
+            // sort alphabetically
             Arrays.sort(fileContents);
             
-            //sort by length. using the string's length to compare first and second
+            // sort by length. using the string's length to compare first and second
             Arrays.sort(fileContents, (a, b) -> Integer.compare(a.length(), b.length()));
         }
     }
@@ -180,7 +198,7 @@ public class WilliamAbernathyCSC499Homework1
         }
         
         System.out.println("The sorted contents of Sort Me.txt have been placed"
-                + " in a newly created file.");
+                + " in a newly created file, Sorted Names.txt");
         System.out.println("Exiting..");
         wr.close();
     }
