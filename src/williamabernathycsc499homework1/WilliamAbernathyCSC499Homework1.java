@@ -135,11 +135,9 @@ public class WilliamAbernathyCSC499Homework1
         // descending
         if(sortChoice.equals("d"))
         {
-            //this sorts them reverse alphabetically
+            //this sorts them alphabetically
             Arrays.sort(fileContents);
             
-            //sort by comparing two strings, and sorting them by 
-            //length of second > length of first
             //97-122
             int nameFirstCharToASCII;
             int currentChar = 97;
