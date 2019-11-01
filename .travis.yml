@@ -1,1 +1,4 @@
 language: java
+before_install:
+  - java -cp .:/usr/share/java/junit.jar org.junit.runner.JUnitCore CompareTestAscending
+  - java -cp .:/usr/share/java/junit.jar org.junit.runner.JUnitCore CompareTestDescending
