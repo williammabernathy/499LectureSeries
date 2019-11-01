@@ -35,7 +35,7 @@ public class CompareTestDescending
     public void setUp() 
     {
         // declare the two files to be compared
-        File sorted = new File("Sorted Names.txt");
+        File sorted = new File("Sorted Names Descending.txt");
         File toCompare = new File("SortedTestDescending.txt");
         
         // build our test object to pass the two files

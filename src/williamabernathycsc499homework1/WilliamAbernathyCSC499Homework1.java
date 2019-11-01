@@ -176,29 +176,56 @@ public class WilliamAbernathyCSC499Homework1
     {
         // use a bufferedwriter to writer the contents of fileContents
         // to a new file called Sorted Names.txt
-        BufferedWriter wr = new BufferedWriter(new FileWriter("Sorted Names.txt"));
-        for(int i = 0; i < fileContents.length; i++) 
+        if (sortChoice.equals("a")) 
         {
-            try
+            BufferedWriter wr = new BufferedWriter(new FileWriter("Sorted Names Ascending.txt"));
+            for (int i = 0; i < fileContents.length; i++) 
             {
-                // write contents to our created file
-                wr.write(fileContents[i]);
-                // if it's the last line, don't add a new line
-                if(i < fileContents.length - 1)
+                try 
                 {
-                    wr.newLine();
+                    // write contents to our created file
+                    wr.write(fileContents[i]);
+                    // if it's the last line, don't add a new line
+                    if (i < fileContents.length - 1) 
+                    {
+                        wr.newLine();
+                    }
+                } catch (Exception e) 
+                {
+                    e.printStackTrace();
                 }
             }
-            catch (Exception e)
+
+            System.out.println("The sorted contents of Sort Me.txt have been placed"
+                    + " in a newly created file, Sorted Names Ascending.txt");
+            System.out.println("Exiting..");
+            wr.close();
+        } 
+        else 
+        {
+            BufferedWriter wr = new BufferedWriter(new FileWriter("Sorted Names Descending.txt"));
+            for (int i = 0; i < fileContents.length; i++) 
             {
-                e.printStackTrace();
+                try 
+                {
+                    // write contents to our created file
+                    wr.write(fileContents[i]);
+                    // if it's the last line, don't add a new line
+                    if (i < fileContents.length - 1) 
+                    {
+                        wr.newLine();
+                    }
+                } catch (Exception e) 
+                {
+                    e.printStackTrace();
+                }
             }
+
+            System.out.println("The sorted contents of Sort Me.txt have been placed"
+                    + " in a newly created file, Sorted Names Descending.txt");
+            System.out.println("Exiting..");
+            wr.close();
         }
-        
-        System.out.println("The sorted contents of Sort Me.txt have been placed"
-                + " in a newly created file, Sorted Names.txt");
-        System.out.println("Exiting..");
-        wr.close();
     }
 
     public static void main(String[] args) throws Exception
