@@ -2,7 +2,7 @@
 
 <project name="WilliamAbernathyCSC499Homework1" default="default" basedir=".">
     <description>Builds, tests, and runs the project WilliamAbernathyCSC499Homework1.</description>
-    <!-- <import file="nbproject/build-impl.xml"/> -->
+    <import file="nbproject/build-impl.xml"/>
     
     <property name="main.build.dir" value="build/main" />  
   <property name="main.src.dir" value="src" />
