@@ -4,14 +4,6 @@
     <description>Builds, tests, and runs the project WilliamAbernathyCSC499Homework1.</description>
     <import file="nbproject/build-impl.xml"/>
     
-    <junit>
-        <classpath>
-            <fileset dir="lib">  
-                <include name="**/*.jar" />  
-            </fileset> 
-        </classpath>
-    </junit>
-    
     <!--
     <property name="main.build.dir" value="build/main" />  
     <property name="main.src.dir" value="src" />
