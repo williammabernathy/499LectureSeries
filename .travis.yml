@@ -5,5 +5,5 @@ addons:
     packages:
       - ant
 script:
-  - ant test -lib ./lib/
+  - ant test -lib ./lib/junit-4.12.jar
   
