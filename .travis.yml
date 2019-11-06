@@ -6,4 +6,5 @@ addons:
       - ant
 script:
   - ant test -lib ./lib/junit-4.12.jar
+  - ant test -lib ./lib/ant-junit-1.10.7.jar
   
