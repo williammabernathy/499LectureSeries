@@ -1,7 +1,8 @@
 dist: xenial
 language: java
 before_install:
-    - sudo apt-get install ant-junit
+    - sudo apt-get -q update
+    - sudo apt-get -y install ./lib/ant-junit4-1.10.7.jar
 addons:
   apt:
     packages:
