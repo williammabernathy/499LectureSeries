@@ -22,7 +22,7 @@ import org.junit.Test;
 public class WilliamAbernathyCSC499Homework1 
 {
     private static Scanner input = new Scanner(System.in);
-    private static String userInput xxxNoScOpExxx
+    private static String userInput;
     private static String sortChoice;
     private static String fileContents[];           // array of file contents
     private static int fileSize = 0;                // how many entries in file
