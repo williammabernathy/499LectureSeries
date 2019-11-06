@@ -1,6 +1,11 @@
 import java.io.File;
 import java.io.IOException;
-import junit.framework.Assert;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import williamabernathycsc499homework1.CompareOutput;
 
 public class CompareTestDescending 
@@ -13,19 +18,19 @@ public class CompareTestDescending
         
     }
     
-    //@BeforeClass
+    @BeforeClass
     public static void setUpClass() 
     {
         
     }
     
-    //@AfterClass
+    @AfterClass
     public static void tearDownClass() 
     {
         
     }
     
-    //@Before
+    @Before
     public void setUp() 
     {
         // declare the two files to be compared
@@ -36,14 +41,14 @@ public class CompareTestDescending
         doesMatchDescending = new CompareOutput(sorted, toCompare);
     }
     
-    //@Test
+    @Test
     public void testCompare() throws IOException
     {
         // if files match, returns true
         Assert.assertEquals(true, doesMatchDescending.compareFiles());
     }
     
-    //@After
+    @After
     public void tearDown() 
     {
         
